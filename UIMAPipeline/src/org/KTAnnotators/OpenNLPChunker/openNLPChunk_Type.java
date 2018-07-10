@@ -1,0 +1,69 @@
+
+/* First created by JCasGen Fri Jul 06 16:34:20 IST 2018 */
+package org.KTAnnotators.OpenNLPChunker;
+
+import org.apache.uima.jcas.JCas;
+import org.apache.uima.jcas.JCasRegistry;
+import org.apache.uima.cas.impl.TypeImpl;
+import org.apache.uima.cas.Type;
+import org.apache.uima.cas.impl.FeatureImpl;
+import org.apache.uima.cas.Feature;
+import org.apache.uima.jcas.tcas.Annotation_Type;
+
+/** 
+ * Updated by JCasGen Mon Jul 09 11:55:50 IST 2018
+ * @generated */
+public class openNLPChunk_Type extends Annotation_Type {
+  /** @generated */
+  @SuppressWarnings ("hiding")
+  public final static int typeIndexID = openNLPChunk.typeIndexID;
+  /** @generated 
+     @modifiable */
+  @SuppressWarnings ("hiding")
+  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("org.KTAnnotators.OpenNLPChunker.openNLPChunk");
+ 
+  /** @generated */
+  final Feature casFeat_chunkType;
+  /** @generated */
+  final int     casFeatCode_chunkType;
+  /** @generated
+   * @param addr low level Feature Structure reference
+   * @return the feature value 
+   */ 
+  public String getChunkType(int addr) {
+        if (featOkTst && casFeat_chunkType == null)
+      jcas.throwFeatMissing("chunkType", "org.KTAnnotators.OpenNLPChunker.openNLPChunk");
+    return ll_cas.ll_getStringValue(addr, casFeatCode_chunkType);
+  }
+  /** @generated
+   * @param addr low level Feature Structure reference
+   * @param v value to set 
+   */    
+  public void setChunkType(int addr, String v) {
+        if (featOkTst && casFeat_chunkType == null)
+      jcas.throwFeatMissing("chunkType", "org.KTAnnotators.OpenNLPChunker.openNLPChunk");
+    ll_cas.ll_setStringValue(addr, casFeatCode_chunkType, v);}
+    
+  
+
+
+
+  /** initialize variables to correspond with Cas Type and Features
+	 * @generated
+	 * @param jcas JCas
+	 * @param casType Type 
+	 */
+  public openNLPChunk_Type(JCas jcas, Type casType) {
+    super(jcas, casType);
+    casImpl.getFSClassRegistry().addGeneratorForType((TypeImpl)this.casType, getFSGenerator());
+
+ 
+    casFeat_chunkType = jcas.getRequiredFeatureDE(casType, "chunkType", "uima.cas.String", featOkTst);
+    casFeatCode_chunkType  = (null == casFeat_chunkType) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_chunkType).getCode();
+
+  }
+}
+
+
+
+    

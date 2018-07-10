@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <primitive>false</primitive>  
+  <delegateAnalysisEngineSpecifiers>
+    <delegateAnalysisEngine key="openNLPTokenizerDescriptor">
+      <import location="openNLPTokenizerDescriptor.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="openNLPPOSDescriptor">
+      <import location="openNLPPOSDescriptor.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="openNLPChunkerDescriptor">
+      <import location="openNLPChunkerDescriptor.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="OpenNLPNERDescriptor">
+      <import location="OpenNLPNERDescriptor.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="openNLPParserDescriptor">
+      <import location="openNLPParserDescriptor.xml"/>
+    </delegateAnalysisEngine>
+  </delegateAnalysisEngineSpecifiers>
+  <analysisEngineMetaData>
+    <name>OpenNLPPipelineDescriptor</name>
+    <description/>
+    <version>1.0</version>
+    <vendor/>
+    <configurationParameters/>
+    <configurationParameterSettings/>
+    <flowConstraints>
+      <fixedFlow>
+        <node>openNLPTokenizerDescriptor</node>
+        <node>openNLPPOSDescriptor</node>
+        <node>openNLPChunkerDescriptor</node>
+        <node>OpenNLPNERDescriptor</node>
+        <node>openNLPParserDescriptor</node>
+      </fixedFlow>
+    </flowConstraints>
+    <fsIndexCollection/>
+    <capabilities>
+      <capability>
+        <inputs/>
+        <outputs/>
+        <languagesSupported/>
+      </capability>
+    </capabilities>
+  <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+      <outputsNewCASes>false</outputsNewCASes>
+    </operationalProperties>
+  </analysisEngineMetaData>
+  <resourceManagerConfiguration/>
+</analysisEngineDescription>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <primitive>false</primitive>  
+  <delegateAnalysisEngineSpecifiers>
+    <delegateAnalysisEngine key="StanfordTokenAnnotatorDescriptor">
+      <import location="StanfordTokenAnnotatorDescriptor.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="ssplitAnnotatorDescriptor">
+      <import location="ssplitAnnotatorDescriptor.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="POSAnnotatorDescriptor">
+      <import location="POSAnnotatorDescriptor.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="LemmaAnnotatorDescriptor">
+      <import location="LemmaAnnotatorDescriptor.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="ParseDescriptor">
+      <import location="ParseDescriptor.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="NERAnnotatorDescriptor">
+      <import location="NERAnnotatorDescriptor.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="RelationExtractorDescriptor">
+      <import location="RelationExtractorDescriptor.xml"/>
+    </delegateAnalysisEngine>
+  <delegateAnalysisEngine key="CorefAnnotatorDescriptor">
+      <import location="CorefAnnotatorDescriptor.xml"/>
+    
+    </delegateAnalysisEngine>
+  </delegateAnalysisEngineSpecifiers>
+  <analysisEngineMetaData>
+    <name>CoreNLPAggregateDescriptor</name>
+    <description/>
+    <version>1.0</version>
+    <vendor/>
+    <configurationParameters/>
+    <configurationParameterSettings/>
+    <flowConstraints>
+      <fixedFlow>
+        <node>StanfordTokenAnnotatorDescriptor</node>
+        <node>ssplitAnnotatorDescriptor</node>
+        <node>POSAnnotatorDescriptor</node>
+        <node>LemmaAnnotatorDescriptor</node>
+        <node>ParseDescriptor</node>
+        <node>NERAnnotatorDescriptor</node>
+        <node>CorefAnnotatorDescriptor</node>
+      <node>RelationExtractorDescriptor</node>
+      </fixedFlow>
+    </flowConstraints>
+    <typePriorities/>
+    <fsIndexCollection/>
+    <capabilities>
+      <capability>
+        <inputs/>
+        <outputs/>
+        <languagesSupported/>
+      </capability>
+    </capabilities>
+  <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+      <outputsNewCASes>false</outputsNewCASes>
+    </operationalProperties>
+  </analysisEngineMetaData>
+  <resourceManagerConfiguration/>
+</analysisEngineDescription>
